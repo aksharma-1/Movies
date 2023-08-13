@@ -22,7 +22,7 @@ const options = {
   url: 'https://online-movie-database.p.rapidapi.com/title/find',
   params: {q: srchMovie},
   headers: {
-    'X-RapidAPI-Key': '30d45d16e2msha95e28c2eaea246p19bda2jsn9969225a539f',
+    'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
     'X-RapidAPI-Host': 'online-movie-database.p.rapidapi.com'
   }
 };
@@ -39,6 +39,7 @@ async function fetchData(){
     const response = await axios.request(options);
     const lists = response.data.results;
     console.log(lists)
+    console.log(process.env);
     setData(lists) 
   } catch (error) {
     console.error(error);
