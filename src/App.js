@@ -39,7 +39,7 @@ async function fetchData(){
     const response = await axios.request(options);
     const lists = response.data.results;
     console.log(lists)
-    console.log(process.env);
+    // console.log(process.env);
     setData(lists) 
   } catch (error) {
     console.error(error);
